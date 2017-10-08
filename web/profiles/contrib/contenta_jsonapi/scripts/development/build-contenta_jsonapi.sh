@@ -56,17 +56,6 @@ $COMPOSER config repositories.contenta_jsonapi path ${BASE_DIR}
 
 $COMPOSER require "contentacms/contenta_jsonapi:*" "phpunit/phpunit:~5.7" --no-progress
 
-cd $DOCROOT
-echo "-----------------------------------------------"
-echo " Installing Contenta CMS for local usage "
-echo "-----------------------------------------------"
-echo -e "${FG_C}${BG_C} EXECUTING ${NO_C} $DRUSH si contenta_jsonapi --db-url=sqlite://sites/default/files/.ht.sqlite --account-pass=test -y\n\n"
-$DRUSH si contenta_jsonapi --db-url=sqlite://sites/default/files/.ht.sqlite --account-pass=test -y
-if [ $? -ne 0 ]; then
-  echo -e "${FG_C}${EBG_C} ERROR ${NO_C} The Drupal installer failed to install Contenta CMS."
-  exit 3
-fi
-
 echo -e "\n\n\n"
 echo -e "\t********************************"
 echo -e "\t*    Installation finished     *"
